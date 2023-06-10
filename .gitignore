@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Server/shadow_novels/.vs/shadow_novels/v17/.futdcache.v2
+Server/shadow_novels/.vs/ProjectEvaluation/shadow_novels.projects.v6.1
