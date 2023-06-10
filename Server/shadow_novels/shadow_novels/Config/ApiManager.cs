@@ -36,7 +36,7 @@
         {
             if (Environment == AppEnvironment.Development.ToString())
             {
-                return "";
+                return @"https://discord.com/api/webhooks/1116969935512555530/4kEbPIHjdDbw7kWuBkLa6bICdk9l8rt4o8DzmttuTURQqBedUeSZfADE_49RYCEhiwLj";
             }
             else if (Environment == AppEnvironment.Host.ToString())
             {
@@ -45,6 +45,9 @@
             else
             { return ""; }
         }
+
+        internal string GetEnvironment()
+        { return Environment; }
     }
 
     internal enum ApiResponse
