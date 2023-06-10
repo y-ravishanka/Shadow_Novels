@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shadow_novels", "shadow_novels\shadow_novels.csproj", "{97FE6213-2F03-461C-A79F-A0C44A8A3F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97FE6213-2F03-461C-A79F-A0C44A8A3F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FE6213-2F03-461C-A79F-A0C44A8A3F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FE6213-2F03-461C-A79F-A0C44A8A3F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FE6213-2F03-461C-A79F-A0C44A8A3F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B974C4BE-FFBB-4A55-A3B4-BC05AC03E33D}
+	EndGlobalSection
+EndGlobal
