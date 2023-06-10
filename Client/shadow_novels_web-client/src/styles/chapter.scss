@@ -1,0 +1,114 @@
+$color1: #212529;
+$color2: #ffffff;
+$color3: #DCDDDD;
+$color4: #F2F3F4;
+$color5: #0000ff;
+
+.chapter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $color4;
+    padding: 2rem;
+    transition: 0.5s;
+    min-height: 100vh;
+
+    .chapterAticle {
+        display: flex;
+        flex-direction: column;
+
+        padding: 1rem;
+        background: $color2;
+        width: 55rem;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+
+        .relatedLinks {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            // justify-content: center;
+            align-items: center;
+
+            gap: 0.3rem;
+            margin-bottom: 0.5rem;
+            padding: 0rem 0.3rem;
+
+            .clikerbleLink {
+                text-decoration: none;
+                color: $color5;
+                font-size: 0.9rem;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 0.9rem;
+
+                svg{
+                    width: 0.7rem;
+                    height: 0.7rem;
+                }
+            }
+        }
+
+        .chapterName {
+            padding: 1rem 0.3rem;
+            border-top: 1px solid $color3;
+            border-bottom: 1px solid $color3;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $color1;
+        }
+
+        .chapterNavbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            background: $color3;
+            // width: 100%;
+            height: 3rem;
+            margin: 0.5rem 0rem;
+            padding: 0rem 1.5rem;
+            border-radius: 0.7rem;
+
+            .chapterNavbarItem {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+                font-size: 1rem;
+                // padding: 0rem 1.5rem;
+                text-decoration: none;
+                color: $color1;
+                font-weight: bold;
+                gap: 0.5rem;
+                
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
+
+        .chapterContent {
+            overflow-wrap: break-word;
+            line-height: 26px;
+            font-size: 1rem;
+            padding: 1rem 0.5rem;
+            // text-align: justify;
+        }
+    }
+}
+
+@media (width < 809px) {
+    .chapter {
+        transition: 0.5s;
+        padding: 0rem;
+    }
+}

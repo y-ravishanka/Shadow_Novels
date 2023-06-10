@@ -1,0 +1,46 @@
+$color1: #212529;
+$color2: #ffffff;
+$color3: #DCDDDD;
+$color4: #F2F3F4;
+$color5: #0000ff;
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    background: $color1;
+    padding: 1rem 0rem;
+    color: $color2;
+
+    .footerListItems{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        margin: 0.5rem 0rem;
+        font-size: 1rem; 
+        gap: 2rem;       
+
+        .listItem{
+            text-decoration: none;
+        color: $color3;
+        transition: 0.3s;
+        font-weight: bold;
+        }
+
+        .listItem:hover{
+            color: $color2;
+            transition: 0.3s;
+        }
+    }
+
+    .copyrightLable{
+        font-size: 0.8rem;
+        margin: 0.5rem 0rem;
+    }
+}
