@@ -10,7 +10,7 @@ namespace shadow_novels.Config
             var client = new DiscordWebhookClient(ApiManager.Instance.GetDiscordWebhook());
 
             var message = new DiscordMessage(
-                "Got an Error in Backend !!!  " + DiscordEmoji.Angry,
+                "Got an Error in BACKEND !!!  " + DiscordEmoji.Angry,
                 username: ApiManager.Instance.GetEnvironment() + " Error Bot",
                 avatarUrl: @"https://static.vecteezy.com/system/resources/previews/000/355/037/original/lady-bug-vector-icon.jpg",
                 tts: false,
@@ -21,7 +21,7 @@ namespace shadow_novels.Config
                         color: null,
                         author: new DiscordMessageEmbedAuthor("System User"),
                         url: null,
-                        description: string.Concat("Message : \n", title, "\nStack Trace : \n", msg),
+                        description: string.Concat("Message : \n", title, "\n\nDetails : \n", msg),
                         fields: null,
                         thumbnail: null,
                         image: null,
