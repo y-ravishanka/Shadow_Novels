@@ -3,6 +3,7 @@ $color2: #ffffff;
 $color3: #DCDDDD;
 $color4: #F2F3F4;
 $color5: #0000ff;
+$color6: #EFEFEF;
 
 .chapter {
     display: flex;
@@ -47,7 +48,7 @@ $color5: #0000ff;
 
                 font-size: 0.9rem;
 
-                svg{
+                svg {
                     width: 0.7rem;
                     height: 0.7rem;
                 }
@@ -77,10 +78,10 @@ $color5: #0000ff;
             border-radius: 0.7rem;
 
             .chapterNavbarItem {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
 
                 font-size: 1rem;
                 // padding: 0rem 1.5rem;
@@ -88,7 +89,7 @@ align-items: center;
                 color: $color1;
                 font-weight: bold;
                 gap: 0.5rem;
-                
+
                 svg {
                     width: 1rem;
                     height: 1rem;
@@ -96,12 +97,186 @@ align-items: center;
             }
         }
 
+        .chapterSettings {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+            width: 100%;
+
+            .chapterSettingsOnButtenPanel {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    outline: none;
+                    background: transparent;
+                    border: none;
+                    width: 5.5rem;
+                    height: 2rem;
+                    cursor: pointer;
+                    border-radius: 0.5rem;
+                    gap: 0.4rem;
+
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-top: 0.3rem;
+                    }
+                }
+
+                .chapterSettingsOnButtenPanelBlack {
+                    color: $color2;
+                    border: 0.1rem solid $color2;
+                }
+
+                .chapterSettingsOnButtenPanelNormal {
+                    color: $color1;
+                    border: 0.1rem solid $color1;
+                }
+
+                button:hover {
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            .chapterSettingsOptionPanel {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                font-size: 0.8rem;
+                width: 14rem;
+                // background: $color3;
+                border: 0.1rem solid $color1;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    .column {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        width: 7rem;
+                        padding: 0rem 0.5rem;
+                    }
+
+                    .changeFontSizePanel {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.5rem;
+
+                        button {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            cursor: pointer;
+                        }
+
+                        label {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            font-size: 1rem;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .cancelButtonPanel{
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        width: 100%;
+                        padding: 0rem 0.5rem;
+
+                        button {
+                            width: 5rem;
+                            padding: 0.2rem;
+                            cursor: pointer;                         
+                            border-radius: 0.2rem;
+                            border: 0.1rem solid $color1;
+                            background: $color2;
+                            color: $color1;
+                            transition: 0.3s;
+                        }
+
+                        button:hover{
+                            background: $color6;
+                            color: $color1;
+                            transition: 0.3s;
+                        }                        
+                    }
+
+                    .cancelWhitekMode{
+                        button{
+                            border: 0.1rem solid $color1;
+                            background: $color2;
+                            color: $color1;
+                            transition: 0.3s;
+                        }
+
+                        button:hover{
+                            background: $color6;
+                            color: $color1;
+                            transition: 0.3s;
+                        }
+                    }
+
+                    .cancelBlackMode{
+                        button{
+                            border: 0.1rem solid $color2;
+                            background: $color1;
+                            color: $color2;
+                            transition: 0.3s;
+                        }
+
+                        button:hover{
+                            background: $color6;
+                            color: $color1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+
+            .optionBlackBorder{
+                border: 0.1rem solid $color2;
+            }
+        }
+
         .chapterContent {
             overflow-wrap: break-word;
             line-height: 26px;
-            font-size: 1rem;
+            // font-size: 1rem;
             padding: 1rem 0.5rem;
             // text-align: justify;
+        }
+
+        .chapterContentBlackMode {
+            background: $color1;
+            color: $color2;
         }
     }
 }

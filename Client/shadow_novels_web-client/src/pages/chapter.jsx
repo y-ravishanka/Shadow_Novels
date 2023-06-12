@@ -88,6 +88,11 @@ const Chapter = () => {
     <p>　　 After a while, the golden light began to appear in Qingqing's eyes, the color of panic had already turned into despair, and the golden light slowly flowed all over his body.</p>
     <p>　　 With a "bang", the beautiful and moving female ghost Qingqing exploded.</p>
     <p>　　 turns into golden light that fills the room, as gorgeous as fireworks.</p>`);
+    const [settingsOn, setSettingsOn] = useState(false);
+    const [blackMode, setBlackMode] = useState(false);
+    const [chapterFontSize, setChapterFontSize] = useState(1);
+    const [showChapterFontSize, setShowChapterFontSize] = useState(1);
+    const [isFontMinDisabled, setIsFontMinDisabled] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -96,14 +101,42 @@ const Chapter = () => {
         });
     };
 
+    const changeSettings = () => {
+        setSettingsOn(!settingsOn);
+    };
+
+    const changeBlackMode = () => {
+        setBlackMode(!blackMode);
+    };
+
+    const changeChapterFontSize = (x) => {
+        if (chapterFontSize >= 1 && chapterFontSize <= 1.3) {
+            var p = chapterFontSize;
+            if (x === true) {
+                if (p < 1.3) {
+                    p = p + 0.1;
+                    setChapterFontSize(parseFloat(p.toFixed(p)));
+                }
+            }
+            else {
+                if (p > 1) {
+                    p = p - 0.1;
+                    setChapterFontSize(parseFloat(p.toFixed(1)));
+                }
+            }
+        }
+    };
+
     useEffect(() => {
         scrollToTop();
+        document.title = `${bookName} ${chapterName} - Shadow Novels`;
+        setShowChapterFontSize(chapterFontSize);
         // eslint-disable-next-line
     }, []);
 
     return (
-        <div className='chapter'>
-            <div className="chapterAticle">
+        <div className='chapter' style={blackMode ? ({ backgroundColor: '#212529' }) : ({})}>
+            <div className="chapterAticle" style={blackMode ? ({ backgroundColor: '#212529', color: '#ffffff' }) : ({})}>
                 <div className="relatedLinks">
                     <Link className='clikerbleLink' to={'/'}>Home</Link>
                     <span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -115,15 +148,63 @@ const Chapter = () => {
                         <path d="m13 17 5-5-5-5"></path>
                         <path d="m6 17 5-5-5-5"></path>
                     </svg></span>
-                    <span>{chapterName}</span>
+                    <span style={blackMode ? ({ backgroundColor: '#212529', color: '#ffffff' }) : ({})}>{chapterName}</span>
                 </div>
-                <div className="chapterName">{bookName} {chapterName}</div>
+                <div className="chapterName" style={blackMode ? ({ backgroundColor: '#212529', color: '#ffffff' }) : ({})}>{bookName} {chapterName}</div>
                 <div className="chapterNavbar">
                     <Link className='chapterNavbarItem' to={'/chapter'}>Prev</Link>
                     <Link className='chapterNavbarItem' to={'/book'}>Table of Content</Link>
                     <Link className='chapterNavbarItem' to={'/chapter'}>Next</Link>
                 </div>
-                <div className="chapterContent">
+                <div className="chapterSettings">
+                    {
+                        settingsOn ? (
+                            <div className={blackMode?('optionBlackBorder chapterSettingsOptionPanel'):('chapterSettingsOptionPanel')}>
+                                <div className="row">
+                                    <div className="column">Dark Mode :</div>
+                                    <div className="column">
+                                        <div className="darkModePanel">
+                                            <label>
+                                                <input type="checkbox" defaultChecked={blackMode} onClick={changeBlackMode} />
+                                                <span />
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">Change Font Size</div>
+                                <div className="row">
+                                    <div className="changeFontSizePanel">
+                                        <button disabled={chapterFontSize === 1 ? (true) : (false)} onClick={() => changeChapterFontSize(false)}>
+                                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5 12h14" />
+                                            </svg>
+                                        </button>
+                                        <label>{(chapterFontSize * 10) - 9}</label>
+                                        <button disabled={chapterFontSize === 1.3 ? (true) : (false)} onClick={() => changeChapterFontSize(true)}>
+                                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 5v14" />
+                                                <path d="M5 12h14" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className={blackMode ? ('cancelBlackMode cancelButtonPanel') : ('cancelButtonPanel')}>
+                                        <button onClick={changeSettings}>Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className='chapterSettingsOnButtenPanel'>
+                                <button onClick={changeSettings} className={blackMode ? ('chapterSettingsOnButtenPanelBlack') : ('chapterSettingsOnButtenPanelNormal')}><svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.723 1.723 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065Z" />
+                                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                </svg><span>Settings</span></button>
+                            </div>
+                        )
+                    }
+                </div>
+                <div className={blackMode ? ('chapterContent chapterContentBlackMode') : ('chapterContent')} style={{ fontSize: chapterFontSize + 'rem' }}>
                     <div dangerouslySetInnerHTML={{ __html: chapterContent }} />
                 </div>
                 <div className="chapterNavbar">
